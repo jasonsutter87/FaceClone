@@ -4,14 +4,45 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :job %><br />
+    <%= f.text_field :job, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :relationship_status %><br />
+    <%= f.text_field :relationship_status, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.text_area :bio, autofocus: true , placeholder: "Bio"%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
