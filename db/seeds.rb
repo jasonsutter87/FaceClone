@@ -9,7 +9,6 @@ require 'faker'
     job: Faker::Job.title,
     relationship_status: ["Single", "It's Complicated", "Taken", "Married", "Table For One, Drinks For Two" ].sample,
     location: [Faker::RickAndMorty.location, Faker::Address.city].sample,
-    photo_id: rand(100),
     email: Faker::Internet.free_email,
     password: Faker::Internet.password
    )
@@ -19,7 +18,6 @@ end
 75.times do
   Post.create(
     user_id: rand(75),
-    text: Faker::Lorem.paragraph(2),
-    image_id: rand(50)
+    text: Faker::Lorem.paragraph(2)
   )
 end
