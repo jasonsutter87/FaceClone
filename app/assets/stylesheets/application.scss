@@ -1,0 +1,91 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+$fb-blue:  #4167b2;
+
+
+body{
+  background-color: #e9ebee;
+}
+
+.container-1000{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  position: relative;
+  max-width: 1000px;
+}
+
+.ul-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.w80{
+  width: 80% !important;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav-bg{
+   background-color: $fb-blue;
+}
+
+.index-fb-logo{
+   color: #fff;
+   font-size: 2rem;
+}
+
+.main-nav-main-items{
+  color: #fff;
+}
+
+.main-nav-menu-title  {
+  color: #fff;
+
+  .main-nav-submenu-link{
+    color: #000 !important;
+  }
+}
+
+
+.main-nav-main-items:not(:first-child){
+  padding-left: .5rem;
+}
+
+.main-nav-left-item:not(:last-child)::after{
+  content: " | ";
+  color: darken($fb-blue, 15%);
+  padding: 0 .5rem;
+}
+
+.nav-icons{
+  color: darken($fb-blue, 25%);
+}
+
+.nav-profile-photo-size{
+  width: 50%;
+}
+
+.nav-profile-photo-image{
+  padding-bottom: 100%;
+  border-radius: 50%;
+}

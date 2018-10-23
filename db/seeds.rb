@@ -21,3 +21,24 @@ end
     text: Faker::Lorem.paragraph(2)
   )
 end
+
+
+User.create(
+  name: "Jason Sutter",
+  username: "Jason.Sutter",
+  bio: 'I like Tacos',
+  job: 'Developer',
+  relationship_status: 'Single',
+  location: 'Granite Bay',
+  email: 'jasonsutter87@gmail.com',
+  password: '123456'
+ )
+
+
+
+Image.create(
+  user_id: 101,
+  url: "https://scontent.fsac1-2.fna.fbcdn.net/v/t1.0-9/37618206_10156746393016661_5602367989581086720_n.jpg?_nc_cat=109&oh=599d9f1fe8fa3b9991bf686b247bd42d&oe=5C57FE8D",
+  imageable_id: User.last.id,
+  imageable_type: "User"
+)

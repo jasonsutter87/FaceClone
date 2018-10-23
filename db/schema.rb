@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_234741) do
 
   create_table "images", force: :cascade do |t|
     t.integer "user_id"
+    t.string "url"
     t.string "imageable_type"
     t.integer "imageable_id"
     t.datetime "created_at", null: false
@@ -24,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_09_27_234741) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "text"
-    t.integer "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
