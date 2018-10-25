@@ -1,13 +1,16 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+<div class="row ">
+  <%= form_for(resource, :as => resource_name,   :html => {:class => "d-flex"}, :url => session_path(resource_name)) do |f| %>
+    <div class="col">
+      <div><%= f.label :email %><br />
+        <%= f.email_field :email, :autofocus => true %></div>
+    </div>
+    <div class="col">
+      <div><%= f.label :password %><br />
+        <%= f.password_field :password %></div>
+    </div>
+    <div class="col align-self-center">
+      <div class="main-nav-sign-in-padd"><br />
+        <%= f.submit "Sign in" %></div>
+    </div>
+  <% end %>
+</div>

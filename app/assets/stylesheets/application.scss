@@ -61,7 +61,6 @@ body{
   height: 34px;
 }
 
-
 .main-nav-main-items{
   color: #fff;
 }
@@ -73,7 +72,6 @@ body{
     color: #000 !important;
   }
 }
-
 
 .main-nav-main-items:not(:first-child){
   padding-left: .5rem;
@@ -96,4 +94,9 @@ body{
 .nav-profile-photo-image{
   padding-bottom: 100%;
   border-radius: 50%;
+}
+
+
+.main-nav-sign-in-padd{
+  margin-top: 6px;
 }

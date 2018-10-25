@@ -87,47 +87,8 @@
 
               <div class="justify-content-end d-flex align-items-center w-100">
                 <li class="main-nav-main-items ">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col">
-                        Email
-                      </div>
-                      <div class="col">
-                        Password
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                        <!-- <form class="form-inline my-2 my-lg-0">
-                          <input class="form-control form-control-sm " type="search" placeholder="email" aria-label="Search">
-                          <input class="form-control form-control-sm " type="search" placeholder="password" aria-label="Search">
-                          <%= submit_tag("Log In") %>
-                        </form> -->
-                        <li>
-        <%= render 'devise/sessions/form' %>
-    </li>
-                                </div>
-                      <div class="col">
-
-                      </div>
-                    </div>
-
-                  </div>
-
+                    <%= render template: './home/_form' %>
                 </li>
-
-                </li>
-
-                <!-- <li class="main-nav-main-items main-nav-left-item nav-icons">
-                  <div class="dropdown d-flex main-nav-main-items">
-                    <div class="main-nav-menu-title d-flex align-items-center" id="services-dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-sort-down"></i>
-                    </div>
-                    <div class="dropdown-menu" >
-                      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'main-nav-submenu-link dropdown-item') %>
-                    </div>
-                  </div>
-                </li> -->
               </div>
             </ul>
           </div>
