@@ -100,3 +100,19 @@ body{
 .main-nav-sign-in-padd{
   margin-top: 6px;
 }
+
+.btn-signup{
+  padding: .5rem 5rem;
+  background: linear-gradient(#75b760, #588d45);
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 5px;
+
+  &:hover{
+    background: linear-gradient(#6cac58, #447333);
+  }
+
+  &:active{
+    margin-top: 2px;
+  }
+}
