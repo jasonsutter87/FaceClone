@@ -1,13 +1,28 @@
-<div class="container-1000">
-  <div class="row">
-    <div class="col-12 col-md-3 d-none d-md-flex">
-      Left sideBar
-    </div>
-    <div class="col-12 col-md-6">
-      news feed
-    </div>
-    <div class="col-12 col-md-3 d-none d-md-flex">
-      Right sideBar
+<% if user_signed_in? %>
+
+  <div class="container-1000">
+    <div class="row">
+      <div class="col-12 col-md-3 d-none d-md-flex">
+        Left sideBar
+      </div>
+      <div class="col-12 col-md-6">
+        news feed
+      </div>
+      <div class="col-12 col-md-3 d-none d-md-flex">
+        Right sideBar
+      </div>
     </div>
   </div>
-</div>
+
+<% else %>
+  <div class="container-1000">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-6">
+        <h2>Create a New Account</h2>
+        <p>It’s free and always will be.</p>
+        <%= render template: './home/_signup_form' %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
