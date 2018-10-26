@@ -47,7 +47,11 @@ body{
 }
 
 .nav-bg{
-   background-color: $fb-blue;
+  background-color: $fb-blue;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
 .index-fb-logo{
@@ -81,6 +85,7 @@ body{
   content: " | ";
   color: darken($fb-blue, 15%);
   padding: 0 .5rem;
+  align-self: center;
 }
 
 .nav-icons{
@@ -115,4 +120,10 @@ body{
   &:active{
     margin-top: 2px;
   }
+}
+
+
+.main-nav-username{
+  color: #fff;
+  margin-left: .75rem;
 }

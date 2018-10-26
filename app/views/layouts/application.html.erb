@@ -41,13 +41,13 @@
                 </div>
 
                 <div class="justify-content-end d-flex align-items-center w-100">
-                  <li class="main-nav-main-items main-nav-left-item flex-grow-1">
+                  <li class="main-nav-main-items main-nav-left-item d-flex flex-grow-1">
                     <div class="nav-profile-photo-size d-inline-block">
-                      <div class="nav-profile-photo-image image" style="background-image: url(  <%= Image.where(user_id:   101).first.url %>); ">
+                      <div class="nav-profile-photo-image image align-self-center" style="background-image: url(  <%= Image.where(user_id:   101).first.url %>); ">
                       </div>
                     </div>
 
-                    <div class="d-inline-block"><a href="/users/<%= current_user.id %>"><%= current_user.name.split(' ')[0] %></a></div>
+                    <div class="align-self-center main-nav-username"><a class="main-nav-username" href="/users/<%= current_user.id %>"><%= current_user.name.split(' ')[0] %></a></div>
                   </li>
                   <li class="main-nav-main-items main-nav-left-item">Home</li>
                   <li class="main-nav-main-items main-nav-left-item">Create</li>

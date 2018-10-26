@@ -6,7 +6,9 @@
         Left sideBar
       </div>
       <div class="col-12 col-md-6">
-        news feed
+        <% @posts.each do |post| %>
+          <%= post.text %><br>
+        <% end %>
       </div>
       <div class="col-12 col-md-3 d-none d-md-flex">
         Right sideBar
