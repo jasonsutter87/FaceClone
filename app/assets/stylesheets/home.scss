@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .users_post{
   background: #fff;
   margin: 1rem 0;
@@ -14,7 +13,6 @@
   padding: 2rem 1rem;
 }
 
-
 .sidenav-profile-photo-size{
   width: 24px;
   height: 24px;
@@ -25,12 +23,10 @@
   border-radius: 50%;
 }
 
-
 .sidenav-username{
   color: #000;
   margin-left: .75rem;
 }
-
 
 .sidenav-news-feed-icon{
   background-image: url(asset-path('sidenav-newfeed_icon.png'));
@@ -55,7 +51,6 @@
   width: 21px;
   height: 20px;
 }
-
 
 .sidenav-messenger-icon{
   background-image: url(asset-path('sidenav-messenger_icon.png'));
