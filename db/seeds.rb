@@ -17,7 +17,7 @@ end
 
 75.times do
   Post.create(
-    user_id: rand(75),
+    user_id: rand(1..75),
     text: Faker::Lorem.paragraph(2)
   )
 end

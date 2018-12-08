@@ -2,22 +2,155 @@
 
   <div class="container-1000">
     <div class="row">
-      <div class="col-12 col-md-3 d-none d-md-flex">
-        Left sideBar
+      <div class="d-none col-md-3 d-md-block">
+        <div class="feed-left-col-content">
+          <ul class="ul-reset">
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-profile-photo-image image align-self-center" style="background-image: url(  <%= Image.where(user_id:   101).first.url %>); ">
+                    </div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="/users/<%= current_user.id %>"><%= current_user.name.split(' ')[0] %></a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-news-feed-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> News Feed</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-messenger-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Messenger</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-watch-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Watch</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-marketplace-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Marketplace</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row pt-5">
+                <p class="sidenav-text-grey">Explore</p>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-events-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Events</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-groups-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Groups</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-oculus-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Oculus</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-pages-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Pages</a></div>
+                </div>
+            </div>
+
+            <div class="interior-contact-row">
+                <div class="interior-contact-left">
+                  <div class="sidenav-profile-photo-size d-inline-block">
+                    <div class="sidenav-news-feed-icon image align-self-center"></div>
+                  </div>
+                </div>
+                <div class="interior-contact-right">
+                  <div class="align-self-center"><a class="sidenav-username" href="#"> Fundraisers</a></div>
+                </div>
+            </div>
+
+          </ul>
+
+
+        </div>
       </div>
       <div class="col-12 col-md-6">
-        <% @posts.each do |post| %>
-          <%= post.text %><br>
-        <% end %>
+          <% @posts.each do |post| %>
+          <div class="users_post">
+            <div class="row">
+              <div class="col">Profile Photo</div>
+              <div class="col-auto">
+                <a href="/users/<%= post.user_id %>/"><%=   User.find(post.user_id).name %></a>
+                (posted <%= time_ago_in_words(post.created_at) %> ago)
+              </div>
+              <div class="col-auto"><i class="fas fa-ellipsis-h"></i></div>
+            </div>
+            <br>
+            <img src="https://picsum.photos/470/470?image=<%= post.id %>" alt="Users post image">
+            <%=   post.text %><br><br><br>
+          </div>
+          <% end %>
       </div>
-      <div class="col-12 col-md-3 d-none d-md-flex">
+      <div class="d-none col-md-3 d-md-block">
         Right sideBar
       </div>
     </div>
   </div>
 
 <% else %>
-  <div class="container-1000">
+  <div class="container-1000 py-5">
     <div class="row">
       <div class="col-12 col-md-6 offset-md-6">
         <h2>Create a New Account</h2>
