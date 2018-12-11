@@ -5,7 +5,7 @@
         <img src="https://picsum.photos/970/371?image=<%= @user.id %>" alt="Users post image">
       </div>
       <div class="usersprofile_name">
-        <p><%= @user.name %></p>
+        <p><%= @user.first_name %> <%= @user.last_name %> </p>
       </div>
       <nav class="usersprofile_navbar w-100 py-2">
         <!-- <ul class="ul-reset d-flex justify-content-between"> -->
@@ -20,7 +20,7 @@
       </nav>
       <div class="usersprofile_profile_photo">
           <div class="usersprofile_profile_photo_pos">
-            <div class="usersprofile_profile_photo_image image align-self-center" style="background-image: url(  <%= Image.where(user_id:   101).first.url %>); ">
+            <div class="usersprofile_profile_photo_image image align-self-center" style="background-image: url(  <%= Image.where(user_id: @user.id).first.url %>); ">
             </div>
         </div>
       </div>

@@ -14,7 +14,7 @@
                   </div>
                 </div>
                 <div class="interior-contact-right">
-                  <div class="align-self-center"><a class="sidenav-username" href="/users/<%= current_user.id %>"><%= current_user.name.split(' ')[0] %></a></div>
+                  <div class="align-self-center"><a class="sidenav-username" href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></div>
                 </div>
             </div>
 
@@ -129,11 +129,15 @@
       <div class="col-12 col-md-6">
           <% @posts.each do |post| %>
           <div class="users_post">
-            <div class="row">
-              <div class="col">Profile Photo</div>
-              <div class="col-auto">
-                <a href="/users/<%= post.user_id %>/"><%=   User.find(post.user_id).name %></a>
-                (posted <%= time_ago_in_words(post.created_at) %> ago)
+            <div class="row nopad py-2 pl-3">
+              <div class="col-auto p-0">
+                <div class="feed_profile_photo_pos">
+                  <div class="feed_profile_photo_image image align-self-center" style="background-image: url(  <%= Image.where(user_id: post.user_id).first.url %>); "></div>
+                </div>
+              </div>
+              <div class="col">
+                <a href="/users/<%= post.user_id %>/"><%=   User.find(post.user_id).first_name %></a><br>
+                <small><%= time_ago_in_words(post.created_at) %> ago &#8226; <%= User.find(post.user_id).location %></small>
               </div>
               <div class="col-auto"><i class="fas fa-ellipsis-h"></i></div>
             </div>
@@ -144,7 +148,7 @@
           <% end %>
       </div>
       <div class="d-none col-md-3 d-md-block">
-        Right sideBar
+        <!-- Right sideBar -->
       </div>
     </div>
   </div>

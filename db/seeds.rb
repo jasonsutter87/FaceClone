@@ -1,8 +1,31 @@
 require 'faker'
 
-50.times do |num|
+(1..50).each do |num|
   User.create(
     first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Name.name.split(' ').join('')+ rand(num).to_s,
+    bio: Faker::Lorem.paragraph(2, true),
+    job: Faker::Job.title,
+    relationship_status: ["Single", "It's Complicated", "Taken", "Married", "Table For One, Drinks For Two" ].sample,
+    location: [Faker::RickAndMorty.location, Faker::Address.city].sample,
+    email: Faker::Internet.free_email,
+    password: Faker::Internet.password
+   )
+  #
+  Image.create(
+    user_id: num,
+    url: "https://randomuser.me/api/portraits/men/#{num}.jpg",
+    imageable_id: User.find(num).id,
+    imageable_type: "User"
+  )
+
+end
+
+
+(51..100).each do |num|
+  User.create(
+    first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
     username: Faker::Name.name.split(' ').join('')+ rand(num).to_s,
     bio: Faker::Lorem.paragraph(2, true),
@@ -15,8 +38,8 @@ require 'faker'
 
   Image.create(
     user_id: num,
-    url: `https://randomuser.me/api/portraits/men/#{num}.jpg`,
-    imageable_id: User.last.id,
+    url: "https://randomuser.me/api/portraits/women/#{num}.jpg",
+    imageable_id: User.find(num).id,
     imageable_type: "User"
   )
 end
@@ -32,7 +55,8 @@ end
 
 
 User.create(
-  name: "Jason Sutter",
+  first_name: "Jason",
+  last_name: "Sutter",
   username: "Jason.Sutter",
   bio: 'I like Tacos',
   job: 'Developer',
