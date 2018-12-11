@@ -1,0 +1,29 @@
+<section>
+  <div class="container-1000">
+    <div class="row nopad">
+      <div class="col-12 usersprofile_header_bg nopad">
+        <img src="https://picsum.photos/970/371?image=<%= @user.id %>" alt="Users post image">
+      </div>
+      <div class="usersprofile_name">
+        <p><%= @user.name %></p>
+      </div>
+      <nav class="usersprofile_navbar w-100 py-2">
+        <!-- <ul class="ul-reset d-flex justify-content-between"> -->
+        <ul class="ul-reset d-flex usersprofile_nav_items-group">
+          <li class="usersprofile_nav_items"><a href="">Timeline</a></li>
+          <li class="usersprofile_nav_items"><a href="">About</a></li>
+          <li class="usersprofile_nav_items"><a href="">Friends</a></li>
+          <li class="usersprofile_nav_items"><a href="">Photos</a></li>
+          <li class="usersprofile_nav_items"><a href="">Archive</a></li>
+          <li class="usersprofile_nav_items"><a href="">More</a></li>
+        </ul>
+      </nav>
+      <div class="usersprofile_profile_photo">
+          <div class="usersprofile_profile_photo_pos">
+            <div class="usersprofile_profile_photo_image image align-self-center" style="background-image: url(  <%= Image.where(user_id:   101).first.url %>); ">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -22,6 +22,19 @@ body{
   background-color: #e9ebee;
 }
 
+.nopad{
+  margin: 0;
+  padding: 0;
+}
+
+.alert {
+    position: relative;
+    padding: 0;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
 .container-1000{
   padding-left: 15px;
   padding-right: 15px;
@@ -64,9 +77,23 @@ body{
   width: 171px;
   height: 34px;
 }
-
 .main-nav-main-items{
   color: #fff;
+
+  // &:hover,
+  // &:active{
+  //     text-decoration: none;
+  //     color: rgb(255, 0,0);
+  // }
+}
+.main-nav-main-items a{
+  color: #fff;
+
+  &:hover,
+  &:active{
+      text-decoration: none;
+      color: rgb(255, 0,0);
+  }
 }
 
 .main-nav-menu-title  {

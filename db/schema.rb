@@ -40,7 +40,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_222857) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
     t.string "username", default: "", null: false
     t.text "bio", default: "", null: false
     t.string "job", default: "", null: false
@@ -60,9 +61,10 @@ ActiveRecord::Schema.define(version: 2018_12_03_222857) do
     t.datetime "updated_at", null: false
     t.index ["bio"], name: "index_users_on_bio"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["job"], name: "index_users_on_job"
+    t.index ["last_name"], name: "index_users_on_last_name"
     t.index ["location"], name: "index_users_on_location"
-    t.index ["name"], name: "index_users_on_name"
     t.index ["relationship_status"], name: "index_users_on_relationship_status"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

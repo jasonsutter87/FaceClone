@@ -2,9 +2,21 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "w-100"}) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "w-100" %>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-6 nopad">
+          <div class="field">
+            <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "w-100" %>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 nopad">
+            <div class="field">
+              <%= f.text_field :last_name, autofocus: true, placeholder: "Last Name", class: "w-100" %>
+            </div>
+        </div>
+      </div>
     </div>
+
     <br />
     <div class="field">
       <%= f.text_field :username, autofocus: true, placeholder: "Username", class: "w-100" %>
